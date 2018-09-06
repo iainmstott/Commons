@@ -14,9 +14,9 @@ ui <- fluidPage(
         titlePanel("Tragedy of the Commons"),
         br(),
         div(id = "tagline",
-        p("WELCOME TO THE FISHING GAME. The aim is to fish for 12 months, without 
-        collapsing the fish stocks but catching enough to keep your family alive."),
-        p("There are 2 levels: easy and hard. In the easy game there are always 5 
+        p("WELCOME TO THE FISHING GAME. Code can be found on my ", a(href = "github.com/iainmstott/Commons", "GITHUB")),
+        p("The aim is to fish for 12 months, without collapsing the fish stocks but catching enough to 
+        keep your family alive. There are 2 levels: easy and hard. In the easy game there are always 5 
         fisherpeople every month (including yourself). In the hard game, you (and the other fisherpeople)
         each have a 25% random chance every month of not catching any fish (keep an eye
         on the graphs to make sure!)"),
@@ -70,6 +70,7 @@ ui <- fluidPage(
                             refreshing the page.",
                             br()),
             conditionalPanel(condition = 'output.extinctPanel',
+                            br(),
                              tableOutput(outputId = "harvestTable1")),
             conditionalPanel(condition = 'output.congratsPanel',
                             "Congratulations! You managed to harvest continually without driving the fish population extinct. 
@@ -82,13 +83,16 @@ ui <- fluidPage(
                             refreshing the page.",
                             br()),
             conditionalPanel(condition = 'output.congratsPanel',
+                             br(),
                              tableOutput(outputId = "harvestTable2")),
             plotOutput(outputId = "stockPlot"),
             div("The cycle is: population (time t) -> harvest -> reproduction -> population (time t+1). Therefore in the above graph, circles show the 
             population size at the start of the month (before harvest), and plus symbols show the population size in the middle 
             of the month (after harvest, before reproduction)."),
             plotOutput(outputId = "harvestPlot"),
-            div("Each colour represents a fisherperson, and you're dark green.")
+            div("Each colour represents a fisherperson, and you're dark green."),
+            br(),
+            br()
         )
     )
 )
