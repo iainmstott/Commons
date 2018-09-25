@@ -7,5 +7,5 @@
 
 # Deploy the application to shinyapps.io
 rsconnect::deployApp(appDir = "C:/Dropbox/Work/Software/Rshiny/Commons",
-                     appName = "Commons", 
+                     appName = "Commons", appId = "421556",
                      account = "iainmstott", upload = TRUE)
